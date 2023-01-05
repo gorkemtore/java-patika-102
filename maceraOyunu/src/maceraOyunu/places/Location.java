@@ -1,5 +1,12 @@
 package maceraOyunu.places;
 
-public abstract class Location {
+import maceraOyunu.game.Player;
 
+public abstract class Location {
+	Player plaer;
+	String name;
+	
+	public abstract void Locations();
+	
+	
 }
