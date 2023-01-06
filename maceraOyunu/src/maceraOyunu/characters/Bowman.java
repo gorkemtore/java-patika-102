@@ -2,12 +2,25 @@ package maceraOyunu.characters;
 
 public class Bowman extends Characters {
 	private int id = 2;
+	private String name = "Bowman";
 	private int damage = 7;
 	private int health = 18;
 	private int money = 20;
 
 	public int getId() {
 		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public int getDamage() {

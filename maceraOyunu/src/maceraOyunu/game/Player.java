@@ -1,31 +1,26 @@
 package maceraOyunu.game;
 
-import javax.swing.JOptionPane;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
 
 import maceraOyunu.characters.Bowman;
+import maceraOyunu.characters.Characters;
 import maceraOyunu.characters.Knight;
 import maceraOyunu.characters.Samurai;
 
+@SuppressWarnings("unused")
 public class Player {
-	Samurai samurai;
-	Bowman bowman;
-	Knight knight;
-	
-	Inventory inventory;
+	public Characters character;
+	public Inventory inventory;
+
 	private int damage;
-	private int healthy;
+	private int health;
 	private int money;
 	private String name;
 
-	public Inventory getInventory() {
-		return inventory;
-	}
-
-	public void setInventory(Inventory inventory) {
-		this.inventory = inventory;
-	}
-
-	public int getDamage() {
+	int getDamage() {
 		return damage;
 	}
 
@@ -34,11 +29,11 @@ public class Player {
 	}
 
 	public int getHealthy() {
-		return healthy;
+		return health;
 	}
 
-	public void setHealthy(int healthy) {
-		this.healthy = healthy;
+	public void setHealthy(int health) {
+		this.health = health;
 	}
 
 	public int getMoney() {
@@ -49,39 +44,39 @@ public class Player {
 		this.money = money;
 	}
 
-	public String getCharacterName() {
+	public String getName() {
 		return name;
 	}
 
-	public void setCharacterName(String characterName) {
-		this.name = characterName;
-	}
 
-	void selectChar() {
-		String charName = JOptionPane.showInputDialog("Bir karakter seçin: \n"
-				+ "Samuray   (1)\n"
-				+ "Okçu        (2)\n"
-				+ "Şovalye    (3)");
-		
+	@SuppressWarnings("resource")
+	Characters selectChar() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Bir karakter seçin:\n" + "1- Samurai , " + "2- Bowman ," + "3- Knight  : ");
+		String charName = sc.nextLine();
+
 		switch (charName) {
 		case "1": {
-			JOptionPane.showMessageDialog(null, "Seçilen karakter: Samurai","Karakter seçtiniz!",JOptionPane.INFORMATION_MESSAGE);
-			samurai = new Samurai();
+
+			character = new Samurai();
 			break;
 		}
-		case "2":{
-			JOptionPane.showMessageDialog(null, "Seçilen karakter: Bowman","Karakter seçtiniz!",JOptionPane.INFORMATION_MESSAGE);
-			bowman = new Bowman();
+		case "2": {
+			character = new Bowman();
 			break;
 		}
-		case "3":{
-			JOptionPane.showMessageDialog(null, "Seçilen karakter: Knight","Karakter seçtiniz!",JOptionPane.INFORMATION_MESSAGE);
-			knight = new Knight();
+		case "3": {
+			character = new Knight();
 			break;
 		}
 		default:
 			throw new IllegalArgumentException("Unexpected value: " + charName);
 		}
+		System.out.println("Seçilen karakter: " + character.getName() + " Başarılar.");
+
+		sc.close();
+
+		return character;
 	}
 
 }

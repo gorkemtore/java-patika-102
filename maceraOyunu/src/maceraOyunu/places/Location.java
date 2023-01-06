@@ -3,10 +3,12 @@ package maceraOyunu.places;
 import maceraOyunu.game.Player;
 
 public abstract class Location {
-	Player plaer;
-	String name;
-	
-	public abstract void Locations();
-	
+	public Player player;
+	public String name;
+
+	public void Locations() {
+		
+	}
+	abstract boolean onLocation();
 	
 }
