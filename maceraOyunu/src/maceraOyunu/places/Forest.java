@@ -16,10 +16,7 @@ public class Forest extends BattleLocation {
 		return true;
 	}
 
-	@Override
-	public void Locations() {
-
-	}
+	
 
 	@Override
 	void combat() {

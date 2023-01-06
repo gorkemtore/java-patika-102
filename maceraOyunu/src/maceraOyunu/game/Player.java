@@ -50,33 +50,12 @@ public class Player {
 
 
 	@SuppressWarnings("resource")
-	Characters selectChar() {
+	public String selectChar() {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Bir karakter seçin:\n" + "1- Samurai , " + "2- Bowman ," + "3- Knight  : ");
 		String charName = sc.nextLine();
 
-		switch (charName) {
-		case "1": {
-
-			character = new Samurai();
-			break;
-		}
-		case "2": {
-			character = new Bowman();
-			break;
-		}
-		case "3": {
-			character = new Knight();
-			break;
-		}
-		default:
-			throw new IllegalArgumentException("Unexpected value: " + charName);
-		}
-		System.out.println("Seçilen karakter: " + character.getName() + " Başarılar.");
-
-		sc.close();
-
-		return character;
+		return charName;
 	}
 
 }

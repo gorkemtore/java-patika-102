@@ -23,10 +23,6 @@ public class Cave extends BattleLocation {
 
 	}
 
-	@Override
-	public void Locations() {
-		// TODO Auto-generated method stub
-
-	}
+	
 
 }

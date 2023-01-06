@@ -1,5 +1,7 @@
 package maceraOyunu.game;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 import javax.sound.midi.SysexMessage;
@@ -22,7 +24,6 @@ public class Game {
 	public Characters character;
 	public Location location;
 	public Inventory inventory;
-	public String getLocation;
 	
 	public void showCharacterProperties() {
 		Characters[] chars = {new Samurai(), new Bowman(),new Knight()};
@@ -31,61 +32,86 @@ public class Game {
 												+chars[i].getHealth()+"\tPara: "+chars[i].getMoney());
 		}		
 	}
+	
+	public void createCharacter() {//seçilen karakteri oluşturur
+		switch (player.selectChar()) {
+		case "1": {
+
+			character = new Samurai();
+			break;
+		}
+		case "2": {
+			character = new Bowman();
+			break;
+		}
+		case "3": {
+			character = new Knight();
+			break;
+		}
+		default:
+			throw new IllegalArgumentException("Unexpected value");
+		}
+		System.out.println("Seçilen karakter: " + character.getName() + " Başarılar.");
+
+	}
+	
 	public void start() {
-		showCharacterProperties();
-		character = player.selectChar();//selectCharı da çağırır.
-		System.out.println(getLocation());
+		
+		showCharacterProperties();//karakter özelliklerini gösterir
+		createCharacter();
+		//character = player.selectChar();//selectCharı da çağırır.
+		getLocation();
+		goLocation(location);
 		
 	}
 	
 
-	public String getLocation() {//gidilecek lokasyonun adını döndürür
-		
+	public Location getLocation() {//gidilecek lokasyonun adını döndürür
+		@SuppressWarnings("resource")
 		Scanner input = new Scanner(System.in);
-		System.out.println("Gitmek istediğiniz yeri seçiniz...\n"
+		String prefer="";
+		
+		System.out.print("Gitmek istediğiniz yeri seçiniz...\n"
 				+ "River \t\t(R)\n"
 				+ "Cave  \t\t(C)\n"
 				+ "Forest\t\t(F)\n"
 				+ "SafeHouse \t(H)\n"
 				+ "ToolStore \t(M)");
-		 getLocation = input.nextLine();
+		prefer= input.next();
 		 
-		 switch (getLocation) {
+		 switch (prefer) {
 			case "R","r" : {
-				getLocation = "River";
+				location = new River();
 				break;
 			}
 			case "C","c" :{
-				getLocation = "Cave";
+				location = new Cave();
 				break;
 			}
 			case "F","f" :{
-				getLocation="Forest";
+				location=new Forest(); 
 				break;
 			}
 			case "H","h" :{
-				getLocation = "SafeHouse";
+				location = new SafeHouse();
 				break;
 			}
 			case "M","m" :{
-				getLocation="ToolStore";
+				location= new ToolStore();
 				break;
 			}
 			default:
-				throw new IllegalArgumentException("Unexpected value: " + getLocation);
+				throw new IllegalArgumentException("Unexpected value");
 			}
-		 return getLocation;
+		 return location;
 		 
 	}
 
 	
-	public void goLocation(String getLocation){
-		Location[] locations = {new Cave(), new Forest(), new River(), new SafeHouse(), new ToolStore()};
-		for (Location location : locations) {
-			if(location.name == getLocation) {
-				System.out.println(location.name+" seçildi.");
-			}
-		}
+	public void goLocation(Location location){
+		
+		
+		
 	}
 	
 	

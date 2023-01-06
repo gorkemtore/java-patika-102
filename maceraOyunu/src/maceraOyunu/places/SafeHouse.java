@@ -1,17 +1,29 @@
 package maceraOyunu.places;
 
-public class SafeHouse extends NormalLocation{
+import maceraOyunu.characters.Characters;
+import maceraOyunu.game.Game;
+import maceraOyunu.game.Player;
 
-	@Override
-	boolean onLocation() {
-		// TODO Auto-generated method stub
-		return false;
+public class SafeHouse extends NormalLocation {
+	public Player player;
+	private String name = "SafeHouse";
+	Game game = new Game();
+	public Characters character = game.character;
+	
+	public String getName() {
+		return name;
 	}
 
-	@Override
-	public void Locations() {
-		// TODO Auto-generated method stub
+	public SafeHouse() {
 		
+		
+	}
+
+	public void increaseHealth(Characters characters) {
+		System.out.println(game.character.getName());
+		//player.setHealthy(player.selectChar().getHealth());
+		//System.out.println(player.getHealthy());
+
 	}
 
 }

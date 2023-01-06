@@ -4,7 +4,7 @@ import maceraOyunu.game.Game;
 import maceraOyunu.obstacles.Bear;
 import maceraOyunu.obstacles.Vampire;
 import maceraOyunu.obstacles.Zombie;
-
+import java.util.Scanner;
 @SuppressWarnings("unused")
 public class Main {
 

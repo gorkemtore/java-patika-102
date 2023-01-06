@@ -4,11 +4,10 @@ import maceraOyunu.game.Player;
 
 public abstract class Location {
 	public Player player;
-	public String name;
+	private String name;
 
-	public void Locations() {
-		
+	public String getName() {
+		return name;
 	}
-	abstract boolean onLocation();
 	
 }
