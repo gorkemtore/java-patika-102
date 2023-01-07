@@ -9,6 +9,7 @@ public class SafeHouse extends NormalLocation{
 		this.player = player;
 	}
 	public void onLocation() {
+		System.out.println("Şuan SafeHouse konumundasınız. Can değeriniz yenilenecek!!!!");
 		for (Characters character : player.chars) {
 			if(character.getName() == player.character.getName()) {
 				player.character.setHealth(character.getHealth());
