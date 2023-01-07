@@ -24,6 +24,7 @@ public class Game {
 	public Characters character;
 	public Location location;
 	public Inventory inventory;
+
 	
 	public void showCharacterProperties() {
 		Characters[] chars = {new Samurai(), new Bowman(),new Knight()};
@@ -61,12 +62,13 @@ public class Game {
 		createCharacter();
 		//character = player.selectChar();//selectCharı da çağırır.
 		getLocation();
+		player.character = character;
+		location.player = player;
 		goLocation(location);
 		
 	}
 	
-
-	public Location getLocation() {//gidilecek lokasyonun adını döndürür
+	public Location getLocation() {//gidilecek lokasyonu döndürür
 		@SuppressWarnings("resource")
 		Scanner input = new Scanner(System.in);
 		String prefer="";
@@ -108,10 +110,10 @@ public class Game {
 	}
 
 	
-	public void goLocation(Location location){
-		
-		
-		
+	public void goLocation(Location location){//lokasyona 
+		character.setHealth(character.getHealth()-10);
+		System.out.println(location.player.character.getHealth());
+
 	}
 	
 	

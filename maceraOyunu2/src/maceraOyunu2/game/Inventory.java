@@ -1,15 +1,14 @@
-package maceraOyunu.game;
+package maceraOyunu2.game;
 
 public class Inventory {
 	private boolean water = false;
 	private boolean food = false;
 	private boolean firewoord = false;
-	
-	private String weaponName=null;
-	private String armorName=null;
+
+	private String weaponName = null;
+	private String armorName = null;
 	private int weaponDamage = 0;
 	private int armorDefance = 0;
-
 
 	public boolean isWater() {
 		return water;
