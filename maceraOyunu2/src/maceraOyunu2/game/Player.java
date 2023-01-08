@@ -15,14 +15,10 @@ public class Player {
 	private int money;
 	private String name;
 
-	public Inventory getInventory() {
-		return inventory;
+	public Player() {
+		inventory = new Inventory();
+		
 	}
-
-	public void setInventory(Inventory inventory) {
-		this.inventory = inventory;
-	}
-
 	public int getDamage() {
 		return damage;
 	}
@@ -83,6 +79,7 @@ public class Player {
 		default:
 			throw new Exception("Hatalı giriş!");
 		}
+		System.out.println(character.getName()+" adlı karakteri seçtiniz. Başarılar.\n");
 
 	}
 }
