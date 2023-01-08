@@ -2,11 +2,12 @@ package maceraOyunu2.places;
 
 import maceraOyunu2.obstacles.Obstacle;
 
-public class BattleLocation extends Location{
+public abstract class BattleLocation extends Location{
 	
 	public Obstacle obstacle;
 	
-	public BattleLocation() {
+	public BattleLocation(Obstacle o) {
+		this.obstacle = o;
 	}
 
 	@Override

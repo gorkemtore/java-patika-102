@@ -16,7 +16,6 @@ public class ToolStore extends NormalLocation {
 	}
 
 	void menu() {
-		player.character.setMoney(1000);
 
 		Weaponary w1 = new Weaponary(1, "Tabanca", 2, 25);
 		Weaponary w2 = new Weaponary(2, "Kılıç", 3, 35);
@@ -44,6 +43,9 @@ public class ToolStore extends NormalLocation {
 			System.out.println(aList[i].type + "\t *" + aList[i].id + "\t    *" + aList[i].block + "\t  *"
 					+ aList[i].money + "\n");
 		}
+		
+		System.out.println("Paranız : "+player.character.getMoney());
+		
 		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Silah almak ister misiniz ? (E/H) : ");
@@ -61,10 +63,12 @@ public class ToolStore extends NormalLocation {
 					checkId = true;
 
 					if (player.character.getMoney() >= weapon.money) {
-						player.inventory.setWeaponName(weapon.name);
-
+						this.player.inventory.setWeaponName(weapon.name);
+						
+						this.player.inventory.setWeaponDamage(weapon.damage);
+						
 						System.out.println("Envantere eklendi: " + player.inventory.getWeaponName());
-
+						
 						player.character.setMoney(player.character.getMoney() - weapon.money);
 						System.out.println("Kalan para : " + player.character.getMoney());
 					} else {
@@ -94,8 +98,10 @@ public class ToolStore extends NormalLocation {
 					checkId = true;
 
 					if (player.character.getMoney() >= armor.money) {
-						player.inventory.setArmorName(armor.type);
-
+						this.player.inventory.setArmorName(armor.type);
+						
+						this.player.inventory.setArmorDefance(armor.block);
+						
 						System.out.println("Envantere eklendi: " + player.inventory.getArmorName());
 
 						player.character.setMoney(player.character.getMoney() - armor.money);

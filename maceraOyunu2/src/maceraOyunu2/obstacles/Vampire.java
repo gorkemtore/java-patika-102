@@ -1,11 +1,11 @@
 package maceraOyunu2.obstacles;
 
-public abstract class Obstacle {
-	private String name;
-	private int id;
-	private int damage;
-	private int health;
-	private int money;
+public class Vampire extends Obstacle{
+	private String name = "Vampire";
+	private int id = 2;
+	private int health = 14;
+	private int money = 7;
+	private int damage = 4;
 
 	public String getName() {
 		return name;
@@ -23,14 +23,6 @@ public abstract class Obstacle {
 		this.id = id;
 	}
 
-	public int getDamage() {
-		return damage;
-	}
-
-	public void setDamage(int damage) {
-		this.damage = damage;
-	}
-
 	public int getHealth() {
 		return health;
 	}
@@ -45,6 +37,14 @@ public abstract class Obstacle {
 
 	public void setMoney(int money) {
 		this.money = money;
+	}
+
+	public int getDamage() {
+		return damage;
+	}
+
+	public void setDamage(int damage) {
+		this.damage = damage;
 	}
 
 }

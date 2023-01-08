@@ -10,6 +10,7 @@ public abstract class Location {
 	public Location() {
 		player = new Player();
 		player.character = Game.character;
+		player.inventory= Game.inventory;
 		
 	}
 	
