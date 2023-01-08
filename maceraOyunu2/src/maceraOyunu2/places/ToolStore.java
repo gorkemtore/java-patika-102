@@ -54,12 +54,12 @@ public class ToolStore extends NormalLocation {
 			int weapon_buyId = sc.nextInt();
 
 			boolean checkId = false;
-			
+
 			for (Weaponary weapon : wList) {
 				if (weapon.id == weapon_buyId) {
-					
+
 					checkId = true;
-					
+
 					if (player.character.getMoney() >= weapon.money) {
 						player.inventory.setWeaponName(weapon.name);
 
@@ -72,15 +72,14 @@ public class ToolStore extends NormalLocation {
 					}
 				}
 			}
-			if(! checkId) {
+			if (!checkId) {
 				System.out.println("Hatalı id girdiniz!");
 			}
 
-		}else {
+		} else {
 			System.out.println("İsteğiniz üzerine silah almadınız!");
 		}
-		
-		
+
 		System.out.print("Zırh almak ister misiniz ? (E/H) : ");
 		String armor_askBuy = sc.next();
 		if (armor_askBuy.toLowerCase().equals("e")) {
@@ -88,12 +87,12 @@ public class ToolStore extends NormalLocation {
 			int armor_buyId = sc.nextInt();
 
 			boolean checkId = false;
-			
+
 			for (Armor armor : aList) {
 				if (armor.id == armor_buyId) {
-					
+
 					checkId = true;
-					
+
 					if (player.character.getMoney() >= armor.money) {
 						player.inventory.setArmorName(armor.type);
 
@@ -105,15 +104,14 @@ public class ToolStore extends NormalLocation {
 						System.out.println("Üzgünüz yetersiz bakiye! Bakiyeniz : " + player.character.getMoney());
 					}
 				}
-				
-				if(!checkId) {
-					System.out.println("Hatalı id girdiniz!");
-				}
-				
+
 			}
-			
-			
-		}else {
+
+			if (!checkId) {
+				System.out.println("Hatalı id girdiniz!");
+			}
+
+		} else {
 			System.out.println("İsteğiniz üzerine zırh almadınız!");
 		}
 
