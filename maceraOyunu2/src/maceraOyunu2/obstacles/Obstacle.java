@@ -7,6 +7,17 @@ public class Obstacle {
 	private int health;
 	private int money;
 
+	
+	
+	public Obstacle(String name, int id, int damage, int health, int money) {
+		super();
+		this.name = name;
+		this.id = id;
+		this.damage = damage;
+		this.health = health;
+		this.money = money;
+	}
+
 	public String getName() {
 		return name;
 	}

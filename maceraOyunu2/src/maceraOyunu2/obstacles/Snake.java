@@ -3,27 +3,13 @@ package maceraOyunu2.obstacles;
 import java.util.Random;
 
 public class Snake extends Obstacle {
-
+	static Random rnd = new Random();
+	static int dmg = rnd.nextInt(3,7);//3-6 arası damage
 	public Snake() {
-		Random rnd = new Random();
-		int dmg = rnd.nextInt(3,7);//3-6 arası damage
+		super("Snake", 4, dmg, 12, 0);
+		
 		this.setDamage(dmg);
 	}
-	
-	private String name = "Snake";
-	private int id = 4;
-	private int health = 12;
-	private int damage;// 3-6 arası
-	private int money=0;
-	
-	public int getMoney() {
-		return money;
-	}
-
-	public void setMoney(int money) {
-		this.money = money;
-	}
-
 	public String lootItem() {
 		Random rnd = new Random();
 		int possibility = rnd.nextInt(1, 101);
@@ -69,40 +55,6 @@ public class Snake extends Obstacle {
 			return null;
 		}
 
-	}
-
-	
-
-	public int getDamage() {
-		return damage;
-	}
-
-	public void setDamage(int damage) {
-		this.damage = damage;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public int getHealth() {
-		return health;
-	}
-
-	public void setHealth(int health) {
-		this.health = health;
 	}
 
 }
