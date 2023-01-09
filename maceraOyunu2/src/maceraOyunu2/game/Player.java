@@ -10,18 +10,16 @@ public class Player {
 	public Characters character;
 	public Inventory inventory;
 
-	
-
 	public Player() {
 		inventory = new Inventory();
-		
+
 	}
-	
-	
+
 	public Characters[] chars = { new Samurai(), new Bowman(), new Knight() };
+
 	public void selectChar() throws Exception {
 		// Karakter özelliklerini bas
-		
+
 		for (int i = 0; i < chars.length; i++) {
 			System.out.println("ID : " + chars[i].getId() + "\t" + "Karakter: " + chars[i].getName() + "\tSağlık: "
 					+ chars[i].getHealth() + "\tHasar: " + chars[i].getDamage() + "\tPara: " + chars[i].getMoney());
@@ -47,7 +45,7 @@ public class Player {
 		default:
 			throw new Exception("Hatalı giriş!");
 		}
-		System.out.println(character.getName()+" adlı karakteri seçtiniz. Başarılar.\n");
+		System.out.println(character.getName() + " adlı karakteri seçtiniz. Başarılar.\n");
 
 	}
 }
