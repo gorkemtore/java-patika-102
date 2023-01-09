@@ -7,6 +7,16 @@ public abstract class Characters {
 	private int money;
 	private int damage;
 
+	
+	public Characters(String name, int id, int health, int money, int damage) {
+		super();
+		this.name = name;
+		this.id = id;
+		this.health = health;
+		this.money = money;
+		this.damage = damage;
+	}
+
 	public String getName() {
 		return name;
 	}
