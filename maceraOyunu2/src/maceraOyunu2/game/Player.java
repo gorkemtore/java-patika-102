@@ -10,46 +10,14 @@ public class Player {
 	public Characters character;
 	public Inventory inventory;
 
-	private int damage;
-	private int healthy;
-	private int money;
-	private String name;
+	
 
 	public Player() {
 		inventory = new Inventory();
 		
 	}
-	public int getDamage() {
-		return damage;
-	}
-
-	public void setDamage(int damage) {
-		this.damage = damage;
-	}
-
-	public int getHealthy() {
-		return healthy;
-	}
-
-	public void setHealthy(int healthy) {
-		this.healthy = healthy;
-	}
-
-	public int getMoney() {
-		return money;
-	}
-
-	public void setMoney(int money) {
-		this.money = money;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
+	
+	
 	public Characters[] chars = { new Samurai(), new Bowman(), new Knight() };
 	public void selectChar() throws Exception {
 		// Karakter özelliklerini bas
