@@ -25,6 +25,7 @@ public class Pit extends BattleLocation{
 		}
 		
 		if (player.character.getHealth() > 0) {
+			@SuppressWarnings("resource")
 			Scanner sc = new Scanner(System.in);
 			
 			Snake snake = new Snake();
