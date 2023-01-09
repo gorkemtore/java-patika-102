@@ -3,6 +3,7 @@ package maceraOyunu2.game;
 import java.util.Scanner;
 import maceraOyunu2.characters.Characters;
 import maceraOyunu2.obstacles.Bear;
+import maceraOyunu2.obstacles.Snake;
 import maceraOyunu2.obstacles.Vampire;
 import maceraOyunu2.obstacles.Zombie;
 import maceraOyunu2.places.*;
@@ -16,7 +17,7 @@ public class Game {
 	void chooseLocation() throws Exception {
 		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
-		System.out.print("1- SafeHouse, 2- ToolStore, 3- Forest, 4-Cave, 5-River :  ");
+		System.out.print("1- SafeHouse, 2- ToolStore, 3- Forest, 4-Cave, 5-River, 6-Pit :  ");
 		String sL = sc.nextLine();
 		if(sL.equals("1"))
 			location = new SafeHouse();
@@ -28,7 +29,8 @@ public class Game {
 			location = new Cave(new Zombie());
 		else if(sL.equals("5"))
 			location = new River(new Bear());
-		
+		else if(sL.equals("6"))
+			location = new Pit(new Snake());
 		else {
 			throw new Exception("Hatalı seçim!");
 		}
@@ -40,6 +42,7 @@ public class Game {
 		player.selectChar();
 		character = player.character;
 		inventory = player.inventory;
+		
 		while(character.getHealth()>0) {
 			chooseLocation();
 			location.onLocation();

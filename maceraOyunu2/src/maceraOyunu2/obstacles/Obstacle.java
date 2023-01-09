@@ -1,6 +1,6 @@
 package maceraOyunu2.obstacles;
 
-public abstract class Obstacle {
+public class Obstacle {
 	private String name;
 	private int id;
 	private int damage;
