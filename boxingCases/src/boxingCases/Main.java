@@ -29,8 +29,7 @@ public class Main {
 	Character charObject = primitiveChar;
 	char charValue = charObject;
 
-	boolean primitiveBool = true;
-	Boolean booleanObject = primitiveBool;
+	boolean primitiveBoolean = true;
+	Boolean booleanObject = primitiveBoolean;
 	boolean booleanValue = booleanObject;
-	
 }
