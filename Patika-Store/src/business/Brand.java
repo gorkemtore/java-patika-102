@@ -40,16 +40,15 @@ public class Brand{
 
         System.out.println();
         System.out.println("BRANDS");
-        System.out.println("----------------------------");
+        System.out.println("-------------------------------------");
   
         //sorts to sortedBrands list
         brands.sort((brand1, brand2) -> brand1.compareTo(brand2));
         //After sorting, print them 
         for (String brand : brands) {
-			System.out.println(brand);
+			System.out.println("- "+ brand);
 			
 			//returns brand's id
-			
 			//System.out.println(" ID : "+ nameId.get(brand));
 		}
         
