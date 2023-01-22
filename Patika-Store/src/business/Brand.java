@@ -6,7 +6,7 @@ import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 
-import productBusiness.Product;
+import product.Product;
 
 @SuppressWarnings("unused")
 public class Brand{

@@ -2,7 +2,7 @@ package business;
 
 import java.util.Scanner;
 
-import productBusiness.SmartPhone;
+import product.SmartPhone;
 
 public class Store {
 
