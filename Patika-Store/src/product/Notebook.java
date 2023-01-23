@@ -1,15 +1,11 @@
 package product;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Notebook extends Product {
 	private int id;
 	private int ram;
 	private int storage;
 	private double screenSize;
 
-	public static List<Notebook> notebooks = new ArrayList<>();
 
 	private static int idCount = 1;
 
