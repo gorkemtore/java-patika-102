@@ -229,8 +229,6 @@ public abstract class Product {
 					break;
 				}
 			}
-		}
-		
-		
+		}	
 	}
 }
