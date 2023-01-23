@@ -15,14 +15,9 @@ public class SmartPhone extends Product {
 
 	public static List<SmartPhone> smartPhones = new ArrayList<>();
 
-	static {
-		// sorted by name
-		smartPhones.sort((phone1, phone2) -> phone1.getName().compareTo(phone2.getName()));
-	}
-
 	private static int idCount = 1;
 
-	public SmartPhone(double price, int discountAmount, int stock, String name, String brand, int storage,
+	public SmartPhone(double price, double discountAmount, int stock, String name, String brand, int storage,
 			double screenSize, int bateryMh, String color, int camera, int ram) {
 		super(price, discountAmount, stock, name, brand);
 		this.id = idCount++;
@@ -92,13 +87,14 @@ public class SmartPhone extends Product {
 	}
 
 	public static void printSmartPhone() {
+		
 		System.out.println("\n------------------------------------------------------------------------------------------------------------------------------------------------------------");
         System.out.println("| ID | Ürün Adı                  | Fiyatı          | Markası         | Stoğu        | İndirim Oranı      | RAM    | Ekran Boyutu      | Hafızası   | Renk   |");
         System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------");
 
 		for(SmartPhone phone : smartPhones) {
 			System.out.printf("| %-2s | %-25s | %-15s | %-15s | %-12s | %-18s | %-6s | %-17s | %-10s | %-10s \n",
-                    phone.getId(), phone.getName(), phone.getPrice(), phone.getBrand(), phone.getStock(),
+                    phone.getId(), phone.getName(), phone.getPrice()+" TL", phone.getBrand(), phone.getStock(),
                     phone.getDiscountAmount(), phone.getRam(), phone.getScreenSize(), phone.getStorage(),phone.getColor());
 		}
 		System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------");

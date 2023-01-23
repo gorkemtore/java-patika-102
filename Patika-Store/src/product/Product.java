@@ -4,12 +4,12 @@ package product;
 public class Product {
 
 	private double price;
-	private int discountAmount;
+	private double discountAmount;
 	private int stock;
 	private String name;
 	private String brand;
 
-	public Product(double price, int discountAmount, int stock, String name, String brand) {
+	public Product(double price, double discountAmount, int stock, String name, String brand) {
 		super();
 		this.price = price;
 		this.discountAmount = discountAmount;
@@ -18,7 +18,7 @@ public class Product {
 		this.brand = brand;
 	}
 
-	public int getDiscountAmount() {
+	public double getDiscountAmount() {
 		return discountAmount;
 	}
 
