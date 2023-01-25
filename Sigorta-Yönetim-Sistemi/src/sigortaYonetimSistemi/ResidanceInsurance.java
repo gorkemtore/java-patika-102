@@ -2,13 +2,13 @@ package sigortaYonetimSistemi;
 
 public class ResidanceInsurance extends Insurance{
 
-	public ResidanceInsurance() {
-		this.setPrice(5000);
+	public ResidanceInsurance(int price) {
+		super(price);
 	}
 
 	@Override
-	public void calculate() {
-		
+	public double calculate() {
+		return (this.getPrice() * 0.30);
 	}
 
 }

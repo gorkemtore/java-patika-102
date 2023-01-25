@@ -8,13 +8,14 @@ public abstract class Insurance {
 	private LocalDate startDate;
 	private LocalDate finishDate;
 
-	public abstract void calculate();
+	public abstract double calculate();
 	
 	
-	public Insurance() {
+	public Insurance(int price) {
 		super();
+		this.price = price;
 		this.startDate = LocalDate.now();
-		this.finishDate = startDate.plusYears(2);
+		this.finishDate = startDate.plusYears(1);
 	}
 
 	public double getPrice() {

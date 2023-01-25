@@ -2,13 +2,14 @@ package sigortaYonetimSistemi;
 
 public class HealthInsurance extends Insurance{
 
-	public HealthInsurance() {
-		
+	public HealthInsurance(int price) {
+		super(price);
 	}
 
 	@Override
-	public void calculate() {
-		this.setPrice(1000);
+	public double calculate() {
+		return (this.getPrice() * 0.05);
+
 	}
 
 }

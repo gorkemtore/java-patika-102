@@ -2,14 +2,14 @@ package sigortaYonetimSistemi;
 
 public class CarInsurance extends Insurance {
 
-	public CarInsurance() {
+	public CarInsurance(int price) {
+		super(price);
 
-		this.setPrice(4000);
 	}
 
 	@Override
-	public void calculate() {
-
+	public double calculate() {
+		return (this.getPrice() * 0.15);
 	}
 
 }

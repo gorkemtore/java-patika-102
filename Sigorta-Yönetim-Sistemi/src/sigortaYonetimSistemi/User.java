@@ -13,7 +13,8 @@ public class User {
 	private int age;
 	private LocalDate lastLoginDate;
 	private List<Address> addressList = new ArrayList<>();
-
+	private List<Insurance> insurances = new ArrayList<>();
+	
 	public User(String name, String surname, String email, String pw, String job, int age) {
 		super();
 		this.name = name;
@@ -49,7 +50,7 @@ public class User {
 		this.email = email;
 	}
 
-	public String getSifre() {
+	public String getPw() {
 		return pw;
 	}
 
@@ -87,6 +88,14 @@ public class User {
 
 	public void setAddressList(List<Address> addressList) {
 		this.addressList = addressList;
+	}
+
+	public List<Insurance> getInsurances() {
+		return insurances;
+	}
+
+	public void setInsurances(List<Insurance> insurances) {
+		this.insurances = insurances;
 	}
 
 }

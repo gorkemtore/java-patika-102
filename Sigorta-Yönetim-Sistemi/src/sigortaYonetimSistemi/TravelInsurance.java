@@ -2,13 +2,13 @@ package sigortaYonetimSistemi;
 
 public class TravelInsurance extends Insurance{
 
-	public TravelInsurance() {
-		this.setPrice(12000);
+	public TravelInsurance(int price) {
+		super(price);
 	}
 
 	@Override
-	public void calculate() {
-		
+	public double calculate() {
+		return (this.getPrice() * 0.04);
 	}
 
 }

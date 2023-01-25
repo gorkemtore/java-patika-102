@@ -1,11 +1,10 @@
 package sigortaYonetimSistemi;
 
-import java.util.List;
 
 public class EnterpriseAccount extends Account{
 
-	public EnterpriseAccount(User user, List<Insurance> insurances, String loginStatus) {
-		super(user, insurances, loginStatus);
+	public EnterpriseAccount(User user) {
+		super(user);
 		// TODO Auto-generated constructor stub
 	}
 
