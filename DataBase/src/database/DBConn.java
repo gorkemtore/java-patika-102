@@ -17,6 +17,10 @@ public class DBConn {
 		Connection connect = null;
 		String insertSql = "insert into student(student_name,student_class) values ('Damla' , 4)";
 		String prSql = "insert into student(student_name,student_class) values (? , ?)";
+		String updateSql = "update student set student_name = 'Mahmut Çetindağ' where student_id =1";
+		String prUpdateSql = "update student set student_name =? where student_id =?";
+		String deleteSql = "delete from student where student_id = 4";
+		String prDeleteSql = "delete from student where student_id = ?";
 		
 		try {
 			connect = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
@@ -37,12 +41,32 @@ public class DBConn {
 			}
 */			
 //		System.out.println(st.executeUpdate(insertSql));//if gets 1, its succeeded!
-			PreparedStatement preparedSt = connect.prepareStatement(prSql); // use that for inserting
+
+/*			PreparedStatement preparedSt = connect.prepareStatement(prSql); // use that for inserting
 			preparedSt.setString(1, "Ahmet");
 			preparedSt.setInt(2, 5);
 			preparedSt.executeUpdate();
 			
 			preparedSt.close();
+*/
+			//Statement st = connect.createStatement();
+			//st.executeUpdate(updateSql);
+			
+/*			PreparedStatement prSt = connect.prepareStatement(prUpdateSql);
+			prSt.setString(1, "Mahmut Mustafa");
+			prSt.setInt(2, 1);//id 1 se 2. sınıf yap! 
+			prSt.executeUpdate();
+*/	
+			
+/*			Statement st = connect.createStatement();
+			st.execute(deleteSql); // deleted id 4 
+			
+			PreparedStatement prSt = connect.prepareStatement(prDeleteSql);
+			prSt.setInt(1, 3);// 1 == first ? symbol
+			prSt.executeUpdate();//deleted by preparedstatement -- id = 3 
+			
+*/			
+			
 			
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
